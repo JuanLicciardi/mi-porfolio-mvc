@@ -1,9 +1,10 @@
-module.exports = {
-    home: (req,res) => {
-        return res.render('index')
+const path = require('path');
 
-    } ,
-    about: (req,res) =>{
-        return res.render('about')
-    }
+module.exports = {
+    home: (req,res)=> 
+        res.sendFile(path.resolve(__dirname,'..','views','home.html'))
+     ,
+    about: (req,res)=> 
+        res.sendFile(path.resolve(__dirname,'..','views','about.html'))
+    
 }
